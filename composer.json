@@ -4,7 +4,6 @@
   "keywords": ["safe types", "option", "maybe", "either", "result", "unwrap", "validate"],
   "type": "library",
   "minimum-stability": "dev",
-  "version": "dev-1.0.0",
   "license": "MIT",
   "autoload": {
     "psr-4": {
