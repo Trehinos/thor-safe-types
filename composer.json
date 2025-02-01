@@ -1,0 +1,23 @@
+{
+    "name": "trehinos/thor-safe-types",
+    "description": "An Option and Either types for PHP 8.4 and above.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Thor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sébastien GELDREICH",
+            "email": "trehinos@gmail.eu"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11"
+    }
+}
