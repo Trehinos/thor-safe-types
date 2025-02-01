@@ -21,7 +21,7 @@ jobs:
       run: _
         sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php;
         sudo apt update;
-        sudo apt-get install -y php8.4;
+        sudo apt-get install -y php8.4 php8.4-dom php8.4-mbstring;
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
