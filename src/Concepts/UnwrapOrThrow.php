@@ -18,7 +18,7 @@ trait UnwrapOrThrow {
         return $this->unwrapOrElse(fn() => throw $t);
     }
 
-    public function unwrap(): array
+    public function unwrap(): mixed
     {
         return $this->unwrapOrThrow(new \LogicException('Cannot happen.'));
     }

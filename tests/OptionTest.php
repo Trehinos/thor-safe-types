@@ -15,9 +15,9 @@ final class OptionTest extends TestCase
         $this->assertEquals($none, $none2);
     }
 
-    public function testUnwrapRuntimeException() {
+    public function testUnwrapException() {
         $none = new None();
-        $this->expectException(RuntimeException::class);
+        $this->expectException(LogicException::class);
         $_ = $none->unwrap();
     }
 

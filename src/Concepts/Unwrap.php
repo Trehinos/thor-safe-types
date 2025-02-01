@@ -28,7 +28,7 @@ interface Unwrap
     public function unwrapOrThrow(Throwable $t): mixed;
 
     /**
-     * Returns the contained value if the option is SOME or else throws a `RuntimeException`.
+     * Returns the contained value if the option is SOME or else throws a predefined `Throwable`.
      *
      * @throws Throwable
      */

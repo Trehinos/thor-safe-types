@@ -6,11 +6,13 @@ use LogicException;
 use Thor\Concepts\Either;
 use Thor\Concepts\EitherCase;
 use Thor\Concepts\Option;
+use Thor\Concepts\UnwrapOrThrow;
 use Thor\Types\Option\None;
 use Throwable;
 
 final class Neither implements Either
 {
+    use UnwrapOrThrow;
 
     public function __construct()
     {
@@ -73,11 +75,6 @@ final class Neither implements Either
     public function unwrapOrElse(callable $ifNot): mixed
     {
         return $ifNot();
-    }
-
-    public function unwrapOr(mixed $default): mixed
-    {
-        return $default;
     }
 
     public function unwrapOrThrow(Throwable $t): never

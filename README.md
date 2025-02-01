@@ -25,7 +25,7 @@ Provides some safe types.
       * Validate
         * `final Validated` 
 
-## Types
+## Types details
 
 ### `Unwrap` type 
 An interface defining utility methods for extracting
@@ -34,7 +34,7 @@ contained values from a structure.
 * `unwrapOrElse(callable $ifNot): mixed` : returns the contained value if it is safe to return or else calls the function `$ifNot` and returns its returned value.
 * `unwrapOr(mixed $default): mixed` : returns the contained value if it is safe to return or else returns `$default`.
 * `unwrapOrThrow(Throwable): mixed` : returns the contained value if it is safe to return or else throws the specified `Throwable`.
-* `unwrap(): mixed` : returns the contained value if it is safe to return or else throws a `RuntimeException`.
+* `unwrap(): mixed` : returns the contained value if it is safe to return or else throws a predefined `Throwable`.
 
 > * Extended by the interfaces `Option` and `Either`.
 > * Implemented partially by the trait `UnwrapOrThrow` :
