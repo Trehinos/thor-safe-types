@@ -13,7 +13,7 @@ final class Validated implements Validate
 {
 
     /**
-     * @var Option Safely access the value if it `isValid()`.
+     * @var Option Safely access the value.
      */
     private(set) Option $validatedOption;
 

@@ -1,22 +1,29 @@
 # Thor Safe Types package
 
-Provides some safe types :
-* `Unwrap`
-  * implemented by `Result`
-    * nature is `ResultType::OK` or `ResultType::ERROR`,
-  * and with `Matchable`, extended by :
-    * `Option` : 
-      * nature is `Maybe::SOME` or `Maybe::None`,
-      * extended by `SomeOrNone`,
-        * implemented by `Some` and `None`,
-    * `Either` :
-      * nature is `EitherCase::Left` and/or `EitherCase::Right` 
-      * implemented by `Neither` and `Both`,
-      * extended by `LeftOrRight` :
-        * implemented by `Left` and `Right`,
-    * `Validate`
-      * implemented by `Validated`,
-      * `Validator` is a derivable `Closure` class which encapsulate a `fn(mixed): bool`.
+Provides some safe types.
+
+## Interfaces
+  * `Unwrap` &`Matchable`, extended by :
+      * `Option`
+      * `Either`
+      * `Validate`
+
+## Types hierarchy
+  * `Validator` : a derivable `Closure` class which encapsulate a `fn(mixed): bool`.
+  * Unwrap
+    * `final Result` (with `enum ResultType`),
+    * with Matchable :
+      * Option (with `enum Maybe`)
+        * `final Some`  
+        * `final None`,
+      * Either (with `enum EitherCase`)
+        * `final Neither`
+        * `final Both`,
+        * `abstract LeftOrRight` :
+          * `final Left`
+          * `final Right`,
+      * Validate
+        * `final Validated` 
 
 ## Types
 
@@ -30,6 +37,9 @@ contained values from a structure.
 * `unwrap(): mixed` : returns the contained value if it is safe to return or else throws a `RuntimeException`.
 
 > * Extended by the interfaces `Option` and `Either`.
+> * Implemented partially by the trait `UnwrapOrThrow` :
+>   * implements `unwrap()`, `unwrapOr()` and `unwrapOrThrow()` 
+>   * needs `unwrapOrElse()`.
 > * Implemented by the final class `Result`.
 
 
@@ -37,7 +47,7 @@ contained values from a structure.
 
 ### `Matchable`
 
-* `match(callable $ifA, callable $ifB)` : Call the function $ifA if some conditions are met or e;se $ifB. It returns the value returned by the called function.
+* `match(callable $ifA, callable $ifB)` : Call the function $ifA if some conditions are met or else $ifB. It returns the value returned by the called function.
 
 ---
 

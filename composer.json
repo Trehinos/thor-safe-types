@@ -1,6 +1,6 @@
 {
     "name": "trehinos/thor-safe-types",
-    "description": "An Option and Either types for PHP 8.4 and above.",
+    "description": "Some safe types for PHP 8.4 and above.",
     "type": "library",
     "license": "MIT",
     "autoload": {
