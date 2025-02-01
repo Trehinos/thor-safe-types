@@ -15,11 +15,6 @@ final class Right extends LeftOrRight
         parent::__construct($value);
     }
 
-    public function toLeft(): Either
-    {
-        return new Left($this->value);
-    }
-
     public function right(): Option
     {
         return SomeOrNone::from($this->value);

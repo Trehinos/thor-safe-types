@@ -26,12 +26,12 @@ final class Both implements Either
         return true;
     }
 
-    public function toLeft(): Either
+    public function toLeft(): Left
     {
         return new Left($this->left);
     }
 
-    public function toRight(): Either
+    public function toRight(): Right
     {
         return new Right($this->right);
     }

@@ -26,12 +26,12 @@ final class Neither implements Either
         return false;
     }
 
-    public function toLeft(): Either
+    public function toLeft(): Left
     {
         return new Left(null);
     }
 
-    public function toRight(): Either
+    public function toRight(): Right
     {
         return new Right(null);
     }

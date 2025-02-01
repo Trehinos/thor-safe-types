@@ -1,10 +1,20 @@
-# Thor Safe Type package
+# Thor Safe Types package
 
-Provides some safe types.
+Provides some safe types modules.
+* `Unwrap` implemented by `Result` and extended by :
+  * `Option` : 
+    * nature is `Maybe::SOME` or `Maybe::None`,
+    * extended by `SomeOrNone`,
+      * implemented by `Some` and `None`,
+  * `Either` :
+    * nature is `EitherCase::Left` and/or `EitherCase::Right` 
+    * implemented by `Neither` and `Both`,
+    * extended by `LeftOrRight` :
+      * implemented by `Left` and `Right`,
 
 ## Types
 
-### `Unwrap` type
+### `Unwrap` type 
 An interface defining utility methods for extracting
 contained values from a structure.
 
@@ -17,14 +27,14 @@ contained values from a structure.
 * `unwrap(): mixed`  
   Returns the contained value if it is safe to return or else throws a `RuntimeException`.
 
-> * Extended by `Option` and `Either`.
-> * Implemented by `Result`
+> * Extended by the interfaces `Option` and `Either`.
+> * Implemented by the final class `Result`.
 
 ---
 
 ### `Option` type
 
-> Extends `Unwrap`
+> Extends `Unwrap` and `Matchable`
  
 The `Maybe` enumeration has the cases `SOME` and `NONE`.
 
@@ -45,6 +55,35 @@ The `Maybe` enumeration has the cases `SOME` and `NONE`.
 
 > * Extended by the abstract class `SomeOrNone`.
 > * Implemented by the final types `Some` and `None`.
+
+---
+
+### `Either` type
+
+> Extends `Unwrap` and `Matchable`
+
+The `EitherCase` enumeration has the cases `LEFT` and `RIGHT`.
+
+* `isA(EitherCAse): bool`
+* `isLeft(): bool`
+* `toLeft(): Left`
+* `left(): Option`
+* `leftOr(mixed): mixed`
+* `isRight(): bool`
+* `toRight(): Right`
+* `right(): Option`
+* `rightOr(mixed): mixed`
+
+> * Extended by the abstract class `LeftOrRight`.
+> * Implemented by the final types `Both` and `Neither`.
+
+---
+
+### `LeftOrRight` type
+
+* `is(): EitherCase`
+
+> Implemented by the final types `Left` and `Right`.
 
 ## License
 

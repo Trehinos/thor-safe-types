@@ -2,6 +2,9 @@
 
 namespace Thor\Concepts;
 
+use Thor\Types\Either\Left;
+use Thor\Types\Either\Right;
+
 /**
  * @template T
  * @type Either<T>
@@ -10,8 +13,8 @@ interface Either extends Unwrap, Matchable {
     public function isLeft(): bool;
     public function isRight(): bool;
     public function isA(EitherCase $case): bool;
-    public function toLeft(): self;
-    public function toRight(): self;
+    public function toLeft(): Left;
+    public function toRight(): Right;
     public function left(): Option;
     public function right(): Option;
     public function leftOr(mixed $value): mixed;

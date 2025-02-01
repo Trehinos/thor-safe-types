@@ -16,14 +16,14 @@ abstract class LeftOrRight implements Either
 
     public function __construct(protected readonly mixed $value) { }
 
-    public function toLeft(): Either
+    public function toLeft(): Left
     {
-        return $this;
+        return new Left($this->value);
     }
 
-    public function toRight(): Either
+    public function toRight(): Right
     {
-        return $this;
+        return new Right($this->value);
     }
 
     public function left(): Option
