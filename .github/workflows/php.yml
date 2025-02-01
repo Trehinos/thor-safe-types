@@ -17,6 +17,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install php8.4
+      run: _
+        sudo LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php;
+        sudo apt update;
+        sudo apt-get install -y php8.4;
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
