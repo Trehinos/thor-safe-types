@@ -4,11 +4,12 @@ namespace Thor\Types\Validation;
 
 use Closure;
 use Thor\Concepts\Option;
+use Thor\Concepts\Validate;
 use Thor\Types\Option\None;
 use Thor\Types\Option\Some;
 use Throwable;
 
-final class Validated
+final class Validated implements Validate
 {
 
     /**
@@ -93,4 +94,8 @@ final class Validated
     }
 
 
+    public function unwrapOrThrow(Throwable $t): mixed
+    {
+        return $this->validatedOption->unwrapOrThrow($t);
+    }
 }
