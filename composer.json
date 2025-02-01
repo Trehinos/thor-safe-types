@@ -1,24 +1,26 @@
 {
-    "name": "trehinos/thor-safe-types",
-    "description": "Some safe types for PHP 8.4 and above.",
-    "type": "library",
-    "version": "dev-1.0.0",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Thor\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Sébastien GELDREICH",
-            "email": "trehinos@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "^8.4"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^11"
+  "name": "trehinos/thor-safe-types",
+  "description": "Some safe types for PHP 8.4 and above.",
+  "keywords": ["safe types", "option", "maybe", "either", "result", "unwrap", "validate"],
+  "type": "library",
+  "minimum-stability": "dev",
+  "version": "dev-1.0.0",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Thor\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Sébastien GELDREICH",
+      "email": "trehinos@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11"
+  }
 }
